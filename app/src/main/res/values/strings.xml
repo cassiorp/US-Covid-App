@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">US Covid App</string>
+    <string name="historico_estados">Dados Históricos por Estado</string>
+    <string name="atual_estados">Dados Atuais por Estado</string>
+    <string name="historico_pais">Dados Históricos dos EUA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
