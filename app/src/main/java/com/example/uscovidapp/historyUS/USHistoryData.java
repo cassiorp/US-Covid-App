@@ -1,12 +1,12 @@
 package com.example.uscovidapp.historyUS;
 
-public class DadosUS {
+public class USHistoryData {
 
     private String data;
     private String casos;
     private String mortes;
 
-    public DadosUS(String data, String casos, String mortes) {
+    public USHistoryData(String data, String casos, String mortes) {
         this.data = data;
         this.casos = casos;
         this.mortes = mortes;

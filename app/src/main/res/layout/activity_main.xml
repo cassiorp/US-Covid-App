@@ -32,6 +32,7 @@
         android:layout_toStartOf="@+id/buttonActualStates"
         android:layout_toLeftOf="@+id/buttonActualStates"
         android:backgroundTint="@color/black"
+        android:onClick="startUSHistory"
         android:text="@string/historico_pais"
         tools:ignore="UnknownId" />
 
@@ -44,9 +45,20 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-       android:layout_margin="8dp
+        android:layout_marginStart="8dp
+"
+        android:layout_marginLeft="8dp
+"
+        android:layout_marginTop="8dp
+"
+        android:layout_marginEnd="8dp
+"
+        android:layout_marginRight="8dp
+"
+        android:layout_marginBottom="8dp
 "
         android:backgroundTint="@color/black"
+        android:onClick="startStatesHistory"
         android:text="@string/historico_estados" />
 
     <Button
@@ -65,6 +77,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/black"
+        android:onClick="startStatesCurrent"
         android:text="@string/atual_estados" />
 
 

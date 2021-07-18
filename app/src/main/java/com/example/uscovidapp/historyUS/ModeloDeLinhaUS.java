@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.uscovidapp.R;
 
-public class ModeloDeLinha extends RecyclerView.ViewHolder {
+public class ModeloDeLinhaUS extends RecyclerView.ViewHolder {
 
     public TextView data;
     public TextView mortes;
     public TextView cases;
 
-    public ModeloDeLinha(View itemView) {
+    public ModeloDeLinhaUS(View itemView) {
         super(itemView);
         data = itemView.findViewById(R.id.date);
         mortes = itemView.findViewById(R.id.mortes);

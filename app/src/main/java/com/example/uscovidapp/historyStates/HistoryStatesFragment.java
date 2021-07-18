@@ -1,4 +1,4 @@
-package com.example.uscovidapp;
+package com.example.uscovidapp.historyStates;
 
 import android.os.Bundle;
 
@@ -10,19 +10,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
-import com.example.uscovidapp.historyStates.AdaptadorDoRecyclerViewStates;
-import com.example.uscovidapp.historyStates.StatesHistoryData;
+import com.example.uscovidapp.R;
+import com.example.uscovidapp.historyUS.AdaptadorDoRecyclerViewUS;
+import com.example.uscovidapp.historyUS.USHistoryData;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
-public class ActualStatesFragment extends Fragment {
-
+public class HistoryStatesFragment extends Fragment {
     View view;
 
     private RecyclerView recyclerView;
@@ -34,10 +37,9 @@ public class ActualStatesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_actual_states, container, false);
+        view = inflater.inflate(R.layout.fragment_history_states, container, false);
 
-        recyclerView = view.findViewById(R.id.recyclerViewCurrent);
-
+        recyclerView = view.findViewById(R.id.recyclerViewStatesHistory);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setHasFixedSize(true);
@@ -48,7 +50,6 @@ public class ActualStatesFragment extends Fragment {
         Bundle b = getArguments();
         String response = b.getString("responseState");
         adaptadorDoRecyclerView.getList().addAll(mountData(response));
-
 
         return view;
     }
@@ -70,4 +71,5 @@ public class ActualStatesFragment extends Fragment {
             throw new RuntimeException(e.getMessage() + e.getCause());
         }
     }
+
 }

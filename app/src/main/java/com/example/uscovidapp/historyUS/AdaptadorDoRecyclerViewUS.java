@@ -11,20 +11,20 @@ import com.example.uscovidapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdaptadorDoRecyclerView extends RecyclerView.Adapter<ModeloDeLinha> {
+public class AdaptadorDoRecyclerViewUS extends RecyclerView.Adapter<ModeloDeLinhaUS> {
     // valores
-    private final List<DadosUS> list;
+    private final List<USHistoryData> list;
 
     private Context ativityEmExecucao;
 
-    public AdaptadorDoRecyclerView(List<DadosUS> valores) {
+    public AdaptadorDoRecyclerViewUS(List<USHistoryData> valores) {
         list = new ArrayList<>();
-        for (DadosUS a : valores) {
+        for (USHistoryData a : valores) {
             list.add(a);
         }
     }
 
-    public List<DadosUS> getList() {
+    public List<USHistoryData> getList() {
         return list;
     }
 
@@ -33,17 +33,17 @@ public class AdaptadorDoRecyclerView extends RecyclerView.Adapter<ModeloDeLinha>
      * @return
      */
     @Override
-    public ModeloDeLinha onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ModeloDeLinhaUS onCreateViewHolder(ViewGroup parent, int viewType) {
         ativityEmExecucao = parent.getContext();
-        final ModeloDeLinha holder = new ModeloDeLinha(LayoutInflater.from(ativityEmExecucao)
+        final ModeloDeLinhaUS holder = new ModeloDeLinhaUS(LayoutInflater.from(ativityEmExecucao)
                 .inflate(R.layout.linha_recycler_view, parent, false));
 
         return holder;
     }
     @Override
-    public void onBindViewHolder(ModeloDeLinha holder, int position) {
+    public void onBindViewHolder(ModeloDeLinhaUS holder, int position) {
         // dado selecionado
-        DadosUS conteudoLinha = list.get(position);
+        USHistoryData conteudoLinha = list.get(position);
         // exibe dados
         holder.data.setText(String.valueOf(conteudoLinha.getData()));
         holder.cases.setText(String.valueOf(conteudoLinha.getCasos()));
