@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         usHistoryResponse = response;
+                        Toast.makeText(getBaseContext(), "sucesso US", Toast.LENGTH_SHORT).show();
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         });
         queue.add(stringRequest);
     }
+
     public void getStatesCurrentResponse(){
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://api.covidtracking.com/v1/states/current.json";

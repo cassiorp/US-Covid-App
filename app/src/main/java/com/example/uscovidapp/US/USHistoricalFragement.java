@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,11 +57,11 @@ public class USHistoricalFragement extends Fragment {
                 String data = jsonObject.getString("date");
                 String casos = jsonObject.getString("positive");
                 String mortes = jsonObject.getString("death");
-                USModel USModel = new USModel(dataFormatter(data), casos, mortes);
+                USModel USModel = new USModel(dataFormatter(data), prettyNumberFormatter(casos), prettyNumberFormatter(mortes));
                 dados.add(USModel);
             }
             return dados;
-        }catch (JSONException e){
+        } catch (JSONException e) {
             throw new RuntimeException(e.getMessage());
         }
 
@@ -68,8 +69,39 @@ public class USHistoricalFragement extends Fragment {
 
     private String dataFormatter(String data) {
         String ano = data.substring(0, 4);
-        String mes = data.substring(4,6);
+        String mes = data.substring(4, 6);
         String dia = data.substring(6, data.length());
         return dia + "/" + mes + "/" + ano;
+    }
+
+    private String prettyNumberFormatter(String casos) {
+        if (casos.length() <= 3) {
+            return casos;
+        }
+
+        if (casos.length() > 3 && casos.length() <= 6) {
+            return thousandFormatter(casos);
+        }
+
+        if(casos.length() > 6 && casos.length() <= 9){
+            return millionFormatter(casos);
+        }
+
+        return casos;
+    }
+
+    private String millionFormatter(String casos) {
+        String unidade = casos.substring(casos.length()-3, casos.length());
+        String dezena = casos.substring(casos.length()-6, casos.length());
+        casos = casos = casos.replaceAll(dezena+"$", "."+dezena);
+        casos = casos = casos.replaceAll(unidade+"$", "."+unidade);
+        return casos + " mi";
+    }
+
+    private String thousandFormatter(String casos) {
+        String unidade = casos.substring(casos.length()-3, casos.length());
+        String formatAux = "."+unidade;
+        casos = casos.replaceAll(unidade+"$",formatAux);
+        return casos + " mil";
     }
 }

@@ -2,10 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:layout_margin="4dp"
     android:background="#f2f2f2"
-    >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,14 +18,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Data:" />
+            android:text="Data:"
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:gravity="center_horizontal"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="18dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -39,14 +42,18 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Casos:" />
+            android:text="Casos:"
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/casos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:gravity="center_horizontal"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="18dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -59,13 +66,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Mortes" />
+            android:text="Mortes"
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/mortes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:gravity="center_horizontal"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="18dp" />
     </LinearLayout>
 </LinearLayout>

@@ -2,10 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:layout_margin="4dp"
     android:background="#f2f2f2"
-    >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,14 +16,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Estado:" />
+            android:gravity="center_horizontal"
+            android:text="Estado:"
+            android:textAlignment="center"
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/textViewState"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:gravity="center_horizontal"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -37,14 +42,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Casos:" />
+            android:gravity="center_horizontal"
+            android:text="Casos:"
+            android:textAlignment="center"
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/textViewCasos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:gravity="center_horizontal"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -57,13 +68,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Mortes:" />
+            android:gravity="center_horizontal"
+            android:text="Mortes:"
+            android:textAlignment="center"
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/textViewMortes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:gravity="center_horizontal"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="16dp" />
     </LinearLayout>
 </LinearLayout>
