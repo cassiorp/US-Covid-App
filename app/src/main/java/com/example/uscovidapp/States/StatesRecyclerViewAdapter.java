@@ -1,4 +1,4 @@
-package com.example.uscovidapp.historyStates;
+package com.example.uscovidapp.States;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,20 +11,20 @@ import com.example.uscovidapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdaptadorDoRecyclerViewStates  extends RecyclerView.Adapter<ModeloDeLinhaStates>{
+public class StatesRecyclerViewAdapter extends RecyclerView.Adapter<StatesLineModel>{
 
-    private final List<StatesHistoryData> list;
+    private final List<StatesModel> list;
 
     private Context ativityEmExecucao;
 
-    public AdaptadorDoRecyclerViewStates(List<StatesHistoryData> valores) {
+    public StatesRecyclerViewAdapter(List<StatesModel> valores) {
         list = new ArrayList<>();
-        for (StatesHistoryData a : valores) {
+        for (StatesModel a : valores) {
             list.add(a);
         }
     }
 
-    public List<StatesHistoryData> getList() {
+    public List<StatesModel> getList() {
         return list;
     }
 
@@ -33,17 +33,17 @@ public class AdaptadorDoRecyclerViewStates  extends RecyclerView.Adapter<ModeloD
      * @return
      */
     @Override
-    public ModeloDeLinhaStates onCreateViewHolder(ViewGroup parent, int viewType) {
+    public StatesLineModel onCreateViewHolder(ViewGroup parent, int viewType) {
         ativityEmExecucao = parent.getContext();
-        final ModeloDeLinhaStates holder = new ModeloDeLinhaStates(LayoutInflater.from(ativityEmExecucao)
+        final StatesLineModel holder = new StatesLineModel(LayoutInflater.from(ativityEmExecucao)
                 .inflate(R.layout.linha_recycler_view_states, parent, false));
 
         return holder;
     }
     @Override
-    public void onBindViewHolder(ModeloDeLinhaStates holder, int position) {
+    public void onBindViewHolder(StatesLineModel holder, int position) {
         // dado selecionado
-        StatesHistoryData conteudoLinha = list.get(position);
+        StatesModel conteudoLinha = list.get(position);
         // exibe dados
         holder.estado.setText(conteudoLinha.getState());
         holder.cases.setText(conteudoLinha.getPositive());

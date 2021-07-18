@@ -1,4 +1,4 @@
-package com.example.uscovidapp.historyUS;
+package com.example.uscovidapp.US;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,20 +11,20 @@ import com.example.uscovidapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdaptadorDoRecyclerViewUS extends RecyclerView.Adapter<ModeloDeLinhaUS> {
+public class USRecyclerViewAdapater extends RecyclerView.Adapter<USLineModel> {
     // valores
-    private final List<USHistoryData> list;
+    private final List<USModel> list;
 
     private Context ativityEmExecucao;
 
-    public AdaptadorDoRecyclerViewUS(List<USHistoryData> valores) {
+    public USRecyclerViewAdapater(List<USModel> valores) {
         list = new ArrayList<>();
-        for (USHistoryData a : valores) {
+        for (USModel a : valores) {
             list.add(a);
         }
     }
 
-    public List<USHistoryData> getList() {
+    public List<USModel> getList() {
         return list;
     }
 
@@ -33,17 +33,17 @@ public class AdaptadorDoRecyclerViewUS extends RecyclerView.Adapter<ModeloDeLinh
      * @return
      */
     @Override
-    public ModeloDeLinhaUS onCreateViewHolder(ViewGroup parent, int viewType) {
+    public USLineModel onCreateViewHolder(ViewGroup parent, int viewType) {
         ativityEmExecucao = parent.getContext();
-        final ModeloDeLinhaUS holder = new ModeloDeLinhaUS(LayoutInflater.from(ativityEmExecucao)
+        final USLineModel holder = new USLineModel(LayoutInflater.from(ativityEmExecucao)
                 .inflate(R.layout.linha_recycler_view, parent, false));
 
         return holder;
     }
     @Override
-    public void onBindViewHolder(ModeloDeLinhaUS holder, int position) {
+    public void onBindViewHolder(USLineModel holder, int position) {
         // dado selecionado
-        USHistoryData conteudoLinha = list.get(position);
+        USModel conteudoLinha = list.get(position);
         // exibe dados
         holder.data.setText(String.valueOf(conteudoLinha.getData()));
         holder.cases.setText(String.valueOf(conteudoLinha.getCasos()));
